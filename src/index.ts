@@ -20,7 +20,27 @@ import {
 } from 'abstract-level'
 import { NextCallback } from 'abstract-level/types/abstract-iterator'
 import ModuleError from 'module-error'
-import Database from 'better-sqlite3'
+// import Database from 'better-sqlite3'
+
+// STUB Database class to remove dependency on 'better-sqlite3'
+class Database {
+  constructor(...args: any[]){}
+  close = (...args: any[]) => {
+    console.log("close called with args:", args);
+  };
+  exec = (...args: any[]) => {
+    console.log("exec called with args:", args);
+  };
+  nextTick = (...args: any[]) => {
+    console.log("nextTick called with args:", args);
+  };
+  pragma = (...args: any[]) => {
+    console.log("pragma called with args:", args);
+  };
+  prepare = (...args: any[]) => {
+    console.log("prepare called with args:", args);
+  };
+};
 
 export type SqliteLevelOptions<K, V> = {
   filename: string
